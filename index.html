@@ -4,60 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Books Table</title>
-    <!-- Add any CSS stylesheets or external stylesheets here -->
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <h1>Books</h1>
-    <table id="booksTable">
-        <thead>
-            <tr>
-                <th>Title</th>
-                <th>Author</th>
-                <th>Genre</th>
-                <!-- Add more table headers if needed -->
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Table rows will be dynamically populated by JavaScript -->
-        </tbody>
-    </table>
-
-    <!-- Include Supabase JS library -->
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
-
-    <script>
-        const supabaseUrl = 'https://vmhdyikknzawqfvslqdl.supabase.co';
-        const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZtaGR5aWtrbnphd3FmdnNscWRsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA0NDMxMzEsImV4cCI6MjAyNjAxOTEzMX0.KY21eyLCqGdjd6U7zMtFWHr5mGS0ogAHld1TMK1rLWE';
-        const supabase = createClient(supabaseUrl, supabaseKey);
-
-        async function fetchBooks() {
-            let { data: books, error } = await supabase
-                .from('books')
-                .select('*');
-
-            if (error) {
-                console.error('Error fetching books:', error.message);
-                return;
-            }
-
-            let tableBody = document.querySelector('#booksTable tbody');
-            tableBody.innerHTML = '';
-
-            books.forEach(book => {
-                let row = document.createElement('tr');
-                row.innerHTML = `
-                    <td>${book.title}</td>
-                    <td>${book.author}</td>
-                    <td>${book.genre}</td>
-                    <!-- Add more columns if needed -->
-                `;
-                tableBody.appendChild(row);
-            });
-        }
-
-        fetchBooks();
-    </script>
-</body>
+    </head>
+    <body>
+      <script src="index.js"></script>
+    </body>
 </html>
