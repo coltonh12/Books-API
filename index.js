@@ -7,7 +7,7 @@ const supabase = createClient(supabaseUrl, supabaseKey)
 
 
 let { data: Books, error } = await supabase
-  .from('Books')
+  .from('fav-books')
   .select('*')
 
   for (let book of books) {
