@@ -10,5 +10,5 @@ let { data: Books, error } = await supabase
 
   for (let book of books) {
     let booklist = document.getElementById('books');
-    booklist.innerHTML += '<li>${book.title}</li>';
+    booklist.innerHTML += `<li>${book.title}</li>`;
   }
