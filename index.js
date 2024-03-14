@@ -6,10 +6,10 @@ const supabase = createClient(supabaseUrl, supabaseKey)
 
 
 let { data: Books, error } = await supabase
-  .from('Books')
+  .from('books')
   .select('*')
 
-  for (let Books of books) {
+  for (let book of books) {
     let booklist = document.getElementById('books');
     booklist.innerHTML += '<li>${book.title}</li>';
   }
