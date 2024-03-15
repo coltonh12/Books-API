@@ -6,7 +6,7 @@ const supabase = createClient(supabaseUrl, supabaseKey)
 
 async function fetchBooks() {
   let { data: books, error } = await supabase
-    .from('Books')
+    .from('books1')
     .select('*')
 
   if (error) {
@@ -14,7 +14,7 @@ async function fetchBooks() {
     return
   }
 
-  let bookList = document.getElementById('Books');
+  let bookList = document.getElementById('books1');
   for (let book of books) {
     bookList.innerHTML += `<li>${book.title}</li>`;
   }
