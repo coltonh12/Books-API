@@ -10,7 +10,7 @@ const supabase = supabase.createClient(supabaseUrl, supabaseKey);
 async function fetchBooks() {
   // Fetch books from Supabase
   const { data: books, error } = await supabase
-    .from('Books')
+    .from('books1')
     .select('*');
 
   // Handle error, if any
