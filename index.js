@@ -16,7 +16,7 @@ async function fetchBooks() {
 
   let bookList = document.getElementById('books1');
   for (let book of books) {
-    bookList.innerHTML += `<li>${book.title}</li>`;
+    bookList.innerHTML += `<li>${book.title.author.isbn}</li>`;
   }
 }
 
