@@ -13,4 +13,3 @@ for (let book of books1) {
   let bookList = document.getElementById('books1');
   bookList.innerHTML += `<li>${book.title}</li>`;
 }
-  
