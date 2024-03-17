@@ -6,9 +6,11 @@ const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS
 const supabase = createClient(supabaseUrl, supabaseKey)
 
 async function getBooks() {
-let { data: books1, error } = await supabase
+
+  let { data: books1, error } = await supabase
   .from('books1')
   .select('*')
+          
 
 for (let book of books1) {
   let bookList = document.getElementById('books1');
